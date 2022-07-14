@@ -1,0 +1,19 @@
+.lista {
+  display: flex;
+}
+
+.lista li {
+  margin: 10px;
+}
+
+.lista li:last-child {
+  background-color: rgb(0, 0, 255);
+}
+
+.lista li:nth-child(odd) {
+  text-decoration: underline 1px green;
+}
+
+.lista li:after {
+  content: "";
+}

@@ -8,5 +8,75 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
-  <body></body>
+  <body>
+    <main>
+      <header></header>
+      <form action="">
+        <fieldset>
+          <h1>Personaliza tu hamburguesa</h1>
+          <section>
+            <h2>Ingredientes</h2>
+            <ul>
+              <li>
+                <label for="queso">Queso</label>
+                <input type="checkbox" id="queso" />
+              </li>
+              <li>
+                <label for="pimiento">Pimiento</label>
+                <input type="checkbox" id="pimiento" />
+              </li>
+              <li>
+                <label for="cebolla">Cebolla</label>
+                <input type="checkbox" id="cebolla" />
+              </li>
+              <li>
+                <label for="jamon">Jamón</label>
+                <input type="checkbox" id="jamon" />
+              </li>
+              <li>
+                <label for="huevo">Huevo</label>
+                <input type="checkbox" id="huevo" />
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Tamaño</h2>
+            <ul>
+              <li>
+                <label for="pequena">Pequeña</label>
+                <input type="radio" id="pequena" name="tamano" />
+              </li>
+              <li>
+                <label for="mediana">Mediana</label>
+                <input type="radio" id="mediana" name="tamano" />
+              </li>
+              <li>
+                <label for="grande">Grande</label>
+                <input type="radio" id="grande" name="tamano" />
+              </li>
+            </ul>
+          </section>
+        </fieldset>
+        <fieldset>
+          <h1>Datos de entrega</h1>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" />
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion" />
+          <label for="telefono">Teléfono</label>
+          <input type="text" id="telefono" />
+          <label for="instrucciones">Instrucciones espciales</label>
+          <textarea type="text" id="instrucciones" cols="30" rows="18"
+          ></textarea></fieldset>
+        <fieldset>
+          <h1>Método de pago</h1>
+          <select>
+            <option>Tarjeta de crédito</option>
+            <option>Metálico</option>
+          </select>
+        </fieldset>
+        <button>Enviar</button>
+      </form>
+    </main>
+  </body>
 </html>

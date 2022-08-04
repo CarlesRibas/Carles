@@ -171,9 +171,6 @@ select el.nombre, ejp.fecha_partido, ev.nombre
     on (el.id = ejp.idEquipoLocal) inner join equipo ev
     on (ev.id = ejp.idEquipoVisitante);
 
-select * from equipo_juega_partido;
-
-
 DROP DATABASE IF EXISTS campeonatos;
 
 

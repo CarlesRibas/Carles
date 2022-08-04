@@ -100,7 +100,7 @@ update usuario set birth = '1986-07-25' where id like 1;
 update usuario set birth = '1980-05-13' where id like 2;
 update usuario set birth = '1990-04-05' where id like 3;
 update usuario set birth = '1993-02-20' where id like 4;
-update usuario set birth = '1995-012-03' where id like 5;
+update usuario set birth = '1995-12-03' where id like 5;
 
 
 -- Selecciona el nombre y la edad del/los usuario/s más mayores.

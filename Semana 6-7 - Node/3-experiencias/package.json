@@ -1,0 +1,22 @@
+{
+  "name": "experiencias",
+  "version": "1.0.0",
+  "description": "Este es un proyecto de backend para una plataforma de compra-venta de experiencias",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "db": "node db/initDB.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.21.0",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3"
+  }
+}

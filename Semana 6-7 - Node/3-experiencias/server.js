@@ -3,13 +3,23 @@ const app = express();
 app.use(express.json());
 
 
-const register = require('./controllers/register');
-const login = require('./controllers/login');
-const getUser = require('./controllers/getUser');
+// USUARIOS
+
+const register = require('./controllers/users/register');
+const login = require('./controllers/users/login');
+const getUser = require('./controllers/users/getUser');
 
 app.post('/register', register);
 app.post('/login', login);
 app.get('/usuario/:idUser', getUser);
+
+
+// PRODUCTOS
+
+const priceFilter = require('./controllers/products/priceFilter');
+
+app.get('/filtro', priceFilter);
+
 
 
 app.use((error, req, res, next) => {

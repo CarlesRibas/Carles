@@ -1,8 +1,8 @@
-const getDB = require('../db/getDB');
+const getDB = require('../../db/getDB');
 const bcrypt = require('bcrypt');
-const { generateError } = require('../helpers');
+const { generateError } = require('../../helpers');
 
-const register = async (req, res, next) => {
+const adminRegister = async (req, res, next) => {
   let connection;
 
   try {
@@ -26,9 +26,9 @@ const register = async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await connection.query(`
-      insert into usuario(nombre, apellido1, apellido2, fecha_nac, email, password, createdAt)
+      insert into usuario(nombre, apellido1, apellido2, fecha_nac, email, password, tipo, createdAt)
       values (?, ?, ?, ?, ?, ?, ?)`,
-      [nombre, apellido1, apellido2, fecha_nac, email, hashedPassword, new Date()]
+      [nombre, apellido1, apellido2, fecha_nac, email, hashedPassword, 'admin', new Date()]
     );
 
     res.send({
@@ -43,4 +43,4 @@ const register = async (req, res, next) => {
   }
 };
 
-module.exports = register;
+module.exports = adminRegister;

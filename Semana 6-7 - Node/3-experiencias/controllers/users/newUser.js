@@ -8,7 +8,7 @@ const register = async (req, res, next) => {
   try {
     connection = await getDB()
 
-    const { nombre, apellido1, apellido2, fecha_nac, email, password } = req.body;
+    const { nombre, apellido1, apellido2, fecha_nac, email, password, tipo } = req.body;
 
     if (!nombre || !apellido1 || !fecha_nac || !email || !password) {
       throw generateError('Faltan campos obligatorios', 400);
@@ -26,9 +26,9 @@ const register = async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await connection.query(`
-      insert into usuario(nombre, apellido1, apellido2, fecha_nac, email, password, createdAt)
-      values (?, ?, ?, ?, ?, ?, ?)`,
-      [nombre, apellido1, apellido2, fecha_nac, email, hashedPassword, new Date()]
+      insert into usuario(nombre, apellido1, apellido2, fecha_nac, email, password, tipo, createdAt)
+      values (?, ?, ?, ?, ?, ?, ?, ?)`,
+      [nombre, apellido1, apellido2, fecha_nac, email, hashedPassword, tipo, new Date()]
     );
 
     res.send({

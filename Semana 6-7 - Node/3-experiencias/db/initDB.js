@@ -1,4 +1,5 @@
 const getDB = require('./getDB');
+const bcrypt = require('bcrypt');
 
 async function main() {
   
@@ -27,6 +28,7 @@ async function main() {
         email varchar(100) not null,
         password varchar(200) not null,
         tipo enum('admin', 'normal') default 'normal',
+        avatar varchar(255),
         createdAt datetime
       )
     `);
@@ -53,10 +55,12 @@ async function main() {
 
     console.log('Insertando datos de prueba...');
 
+    const hashedPassword = await bcrypt.hash('adminpass', 10);
+
     await connection.query(`
         insert into usuario (nombre, apellido1, apellido2, fecha_nac, email, password, tipo, createdAt)
-        values('Carles', 'Ribas', 'Costa', '1986/07/25', 'admin@gmail.com', '12345', 'admin', ?)`, 
-        [new Date()]
+        values('Carles', 'Ribas', 'Costa', '1986/07/25', 'admin@gmail.com', ?, 'admin', ?)`, 
+        [hashedPassword, new Date()]
     );
 
     await connection.query(`
